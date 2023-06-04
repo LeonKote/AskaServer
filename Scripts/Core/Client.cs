@@ -73,11 +73,7 @@ namespace AskaServer
 					break;
 				case "join":
 					if (!IsAuthed) return;
-
-					jToken = request["join"];
-					if (jToken == null || jToken.Type != JTokenType.Integer || !Server.Rooms.ContainsKey((int)jToken)) return;
-
-					Server.Rooms[(int)jToken].OnClientJoin(this);
+					JoinHandler.Execute(this, request);
 					break;
 				case "leave":
 					if (Room == null) return;

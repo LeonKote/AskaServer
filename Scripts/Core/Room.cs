@@ -12,8 +12,10 @@ namespace AskaServer
 		private Quiz quiz;
 		private Client host;
 		private Game game;
+		private bool isStarted;
 
 		public int Id { get; set; }
+		public bool IsStarted { get { return isStarted; } }
 
 		public Dictionary<int, Client> Clients { get; } = new Dictionary<int, Client>();
 
@@ -65,6 +67,7 @@ namespace AskaServer
 		{
 			if (client != host || game.IsStarted) return;
 
+			isStarted = true;
 			Task.Run(() => game.Start());
 		}
 
