@@ -12,6 +12,7 @@ namespace AskaServer
 		public string Id { get; set; }
 		public string Name { get; set; }
 		public string Image { get; set; }
+		public string Description { get; set; }
 		public int QuestionsCount { get; set; }
 		public int AuthorId { get; set; }
 		public bool IsHidden { internal get; set; }
