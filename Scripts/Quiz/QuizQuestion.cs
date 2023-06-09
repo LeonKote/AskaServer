@@ -28,7 +28,7 @@ namespace AskaServer
 		{
 			Id = question.Id;
 			Question = question.Question;
-			Answers = question.Answers;
+			Answers = (string[])question.Answers.Clone();
 			Time = question.Time;
 			Countdown = question.Countdown;
 			RightAnswer = question.RightAnswer;

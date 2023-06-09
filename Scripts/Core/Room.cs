@@ -51,11 +51,8 @@ namespace AskaServer
 
 			if (Clients.Count == 1)
 			{
-				if (game.IsStarted && !game.IsEnded)
-					game.DeleteCache();
 				Server.Rooms.Remove(Id);
 				Logger.Log($"Room #{Id} was destroyed");
-				return;
 			}
 
 			Clients.Remove(client.Id);
